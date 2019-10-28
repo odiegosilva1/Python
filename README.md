@@ -1,3 +1,3 @@
 # Python
 Scripts Python
-Repositório de estudo para scripts básic em python 3.
+Repositório de estudo para scripts em python 3.
