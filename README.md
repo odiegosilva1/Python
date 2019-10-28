@@ -1,3 +1,4 @@
 # Python
 Scripts Python
-Repositório de estudo para scripts em python 3.
+Repositório de estudo em python 3.
+@odiegosilva1
