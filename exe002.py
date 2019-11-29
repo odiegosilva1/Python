@@ -1,4 +1,4 @@
-#Funçao que diz se valr na Var são letras. 
+#Funçao que diz se valor na Var são letras. 
 #Thursday, November7 2019
 '''
 n = input('Digite algo: ')
