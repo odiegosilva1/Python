@@ -1,4 +1,4 @@
-# Descobindo tipos de variável 
+# Discover var types.
 
 a = input('Digite algo: ')
 print('O tipo primitivo desse valor é: ', type(a))
