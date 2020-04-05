@@ -1,4 +1,4 @@
-# Python Scripts Python 3.x
- Studing Python to web.
+# Scripts Python 3.x
+ Studing Python.
 
 @odiegosilva1
