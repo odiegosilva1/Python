@@ -1,4 +1,4 @@
-🐍 Repositório de Estudos de Python 3.x 🚀
+##🐍 Repositório de Estudos de Python 3.x 🚀
 
 Bem-vindo ao repositório dedicado aos estudos da linguagem Python 3.x! Aqui você encontrará recursos, exemplos e projetos para ajudar no seu aprendizado e aprimoramento das habilidades em Python.
 
