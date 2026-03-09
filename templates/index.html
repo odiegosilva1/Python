@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
     <title>Página Login</title>
-    <link rel="styelesheet" href="{url_for('static', filename='style.css')}">
+    
 </head>
 <body>
+    <header>
+        <a href="/">Home</a>
+        <a href="/login"></a>
+    </header>
     <h1>Página de login</h1>
+    <p>isso é um texto</p>
+        <form action="" method="post">
+        Nome: <input type="text" placeholder="Nome" name="nomeForm" id=""><br>
+        e-mail: <input type="email" name="emailForm" id=""><br>
+        <input type="submit" value="Enviar">
+    </form>
 </body>
 </html>
