@@ -11,9 +11,11 @@ def index():
 
 @app.route('/formulario', methods=['GET', 'POST'])
 def formulario():
+   if request.method == "POST": 
     nome = request.form['nomeForm']
     email = request.form['emailForm']
-
+    print(f"Nome: {nome}")
+    print(f"email: {email}")
     return render_template('formulario.html')
 
 
