@@ -1,12 +1,16 @@
-from flask import Flask
+from flask import Flask, render_template
+from markupsafe import escape
 
 app = Flask(__name__)
 
 
-# Rora raiz
 @app.route('/')
 def index():
-    return('Olá mowdoo')
+    return render_template('index.html')
+
+
+
+
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
