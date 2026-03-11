@@ -1,21 +1,17 @@
-from flask import Flask, render_template, request
-from markupsafe import escape
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-
-@app.route('/')
-def index():
+#Rotas e metodos aceitos
+@app.route('/', methods=['GET'])
+def ola_mundo():
     return render_template('index.html')
 
-
-@app.route('/formulario', methods=['GET', 'POST'])
-def formulario():
-    nome = request.form['nomeForm']
-    email = request.form['emailForm']
-
-    return render_template('formulario.html')
+@app.route("/sobre")
+def pagina_sobre():
+    return render_template('/sobre.html')
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
+
+app.run(debug=True)
