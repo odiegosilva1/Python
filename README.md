@@ -79,10 +79,6 @@ agendamento-acolhimento/
 - Otimização de rotas
 - Relatórios e exportação
 
-## Licença
-
-MIT
-```
 
 ---
 
