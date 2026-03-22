@@ -1,19 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seja Bem-vindo</title>
-</head>
-<body>
-<div>
-    <header>
-    <a href="/">Início</a>
-    <a href="/sobre">Sobre</a>
-    </header>
+{% extends "base.html" %}
+
+{% block title %}Calendário de Agendamentos{% endblock %}
+
+{% block content %}
+<div class="calendar-container">
+    <div id="calendar"></div>
 </div>
 
-    <h1>Página de Login</h1>
-</body>
-</html>
+<!-- Modal para agendamento -->
+<div id="appointmentModal" class="modal" aria-hidden="true" role="dialog">
+    <div class="modal-content">
+        <span class="close-button" aria-label="Fechar">&times;</span>
+        <h2>Novo Agendamento</h2>
+        <form id="appointmentForm">
+            <label for="patient_name">Nome do Paciente *</label>
+            <input type="text" id="patient_name" name="patient_name" required>
+
+            <label for="patient_contact">Contato (telefone/email) *</label>
+            <input type="text" id="patient_contact" name="patient_contact" required>
+
+            <label for="professional_id">Profissional *</label>
+            <select id="professional_id" name="professional_id" required>
+                <option value="">Selecione...</option>
+                {% for p in professionals %}
+                <option value="{{ p.id }}" data-area="{{ p.area }}">{{ p.name }} - {{ p.area }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="area">Área de Atuação *</label>
+            <input type="text" id="area" name="area" readonly required>
+
+            <label for="date">Data *</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time_slot">Horário *</label>
+            <select id="time_slot" name="time_slot" required>
+                <option value="">Selecione...</option>
+                <option value="08:00-09:00">08:00 - 09:00</option>
+                <option value="09:00-10:00">09:00 - 10:00</option>
+                <option value="10:00-11:00">10:00 - 11:00</option>
+                <option value="11:00-12:00">11:00 - 12:00</option>
+                <option value="13:00-14:00">13:00 - 14:00</option>
+                <option value="14:00-15:00">14:00 - 15:00</option>
+                <option value="15:00-16:00">15:00 - 16:00</option>
+                <option value="16:00-17:00">16:00 - 17:00</option>
+            </select>
+
+            <button type="submit">Agendar</button>
+            <div id="formMessage" class="message"></div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal para detalhes/cancelamento -->
+<div id="eventModal" class="modal" aria-hidden="true" role="dialog">
+    <div class="modal-content">
+        <span class="close-button" aria-label="Fechar">&times;</span>
+        <h2>Detalhes do Agendamento</h2>
+        <div id="eventDetails"></div>
+        <button id="cancelEventBtn">Cancelar Agendamento</button>
+        <div id="eventMessage" class="message"></div>
+    </div>
+</div>
+{% endblock %}
