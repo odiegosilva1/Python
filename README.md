@@ -1,4 +1,4 @@
-## README.md (Versão Resumida)
+
 
 ```markdown
 # Sistema de Agendamento de Acolhimento
